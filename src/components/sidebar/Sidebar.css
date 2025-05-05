@@ -1,0 +1,254 @@
+.sidebar {
+    height: 100vh;
+    width: 170px;
+    background-color: #262421;
+    color: #ecf0f1;
+    display: block;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    margin-right: 20px;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin: 0;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+.sidebar-menu li:hover {
+    background-color: #1b1a18;
+    border-radius: 1px;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin: 10px 0;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.Icons {
+    width: 1.3rem;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+#play-icon {
+    width: 1.5rem;
+    height: auto;
+    padding-right: 18px;
+    transition: transform 0.2s ease;
+}
+
+#puzzle-piece, #learn-icon, #social-icon {
+    width: 1.8rem;
+    height: auto;
+    padding-right: 13px;
+    transition: transform 0.2s ease;
+}
+
+#watch-icon {
+    width: 1.6rem;
+    height: auto;
+    padding-right: 16px;
+    transition: transform 0.2s ease;
+}
+
+#news-icon {
+    width: 1.5rem;
+    height: auto;
+    padding-right: 18px;
+    transition: transform 0.2s ease;
+}
+
+#more-icon {
+    margin-left: 21px;
+    width: 0.6rem;
+    height: auto;
+    padding-right: 23px;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1.4rem;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-menu a:hover {
+    color: #ffffff;
+}
+
+.sign-up-btn {
+    background-color: #81B64C;
+    color: #fff;
+    padding: 15px 53px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.log-in-btn {
+    background-color: #3C3B39;
+    color: #fff;
+    padding: 15px 59px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.sign-up-btn:hover {
+    background-color: #6fa13e;
+}
+
+.log-in-btn:hover {
+    background-color: #333231;
+}
+
+/* Dodajemy przycisk menu hamburger (początkowo ukryty) */
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: #262421;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    z-index: 1001;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hamburger-menu:hover {
+    background-color: #1b1a18;
+}
+
+/* Responsywność dla tabletów */
+@media screen and (max-width: 992px) {
+    .sidebar {
+        width: 150px;
+        padding: 15px;
+    }
+    
+    .logo {
+        width: 150px;
+    }
+    
+    .sidebar-menu a {
+        font-size: 1.2rem;
+    }
+    
+    .sign-up-btn, .log-in-btn {
+        padding: 12px 40px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsywność dla mniejszych tabletów i telefonów */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 250px;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .hamburger-menu {
+        display: block;
+    }
+    
+    /* Gdy sidebar jest aktywny, dodaj przyciemnienie reszty ekranu */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    
+    .overlay.active {
+        display: block;
+    }
+    
+    /* Zwiększ rozmiar przycisków dla lepszej dostępności na urządzeniach dotykowych */
+    .sign-up-btn, .log-in-btn {
+        width: 90%;
+        margin: 10px auto;
+        padding: 15px;
+        display: block;
+    }
+    
+    .sidebar-menu li {
+        height: auto;
+        padding: 10px 5px;
+    }
+}
+
+/* Responsywność dla małych telefonów */
+@media screen and (max-width: 480px) {
+    .sidebar {
+        width: 80%;
+        padding: 10px;
+    }
+    
+    .sidebar-menu a {
+        font-size: 1.1rem;
+    }
+    
+    .sign-up-btn, .log-in-btn {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+}
