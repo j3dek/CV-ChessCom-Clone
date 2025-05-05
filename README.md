@@ -63,6 +63,7 @@ npm start
 
 ## 📸 Zrzuty ekranu
 
+![{54FEB6FA-A5C5-4AE5-B573-068678466A71}](https://github.com/user-attachments/assets/0098ee0a-d0c9-493c-b166-252c7d32d9e3)
 
 
 
